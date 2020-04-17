@@ -1,0 +1,13 @@
+﻿<Window x:Class="FlightSimulatorApp.WindowsController"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FlightSimulatorApp"
+        mc:Ignorable="d"
+        Title="WindowsController" Height="450" Width="800">
+    <Grid>
+        <RadioButton x:Name="LoginButton" Content="RadioButton" HorizontalAlignment="Left" Margin="232,261,0,0" VerticalAlignment="Top" IsChecked="{Binding ButtonClicked}" Visibility="Hidden" Checked="RadioButton_Checked"/>
+        <RadioButton x:Name="LogoutButton" Content="RadioButton" HorizontalAlignment="Left" Margin="317,193,0,0" VerticalAlignment="Top" IsChecked="{Binding ButtonClicked}" Visibility="Hidden" Checked="ExitButton_checked"/>
+    </Grid>
+</Window>

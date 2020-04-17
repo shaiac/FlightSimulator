@@ -1,0 +1,42 @@
+﻿<UserControl x:Class="FlightSimulatorApp.View.DashBoard"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:FlightSimulatorApp.View"
+             mc:Ignorable="d" 
+             d:DesignHeight="240" d:DesignWidth="400">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="30"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="190"/>
+            <ColumnDefinition Width="10"/>
+            <ColumnDefinition Width="200"/>
+        </Grid.ColumnDefinitions>
+        <Label Grid.Row="0" Grid.Column="0" Content="Heading deg" FontSize="14" HorizontalAlignment="Center" FontFamily="Impact"/>
+        <Label Grid.Row="2" Grid.Column="0" Content="Vertical speed" FontSize="14" HorizontalAlignment="Center" FontFamily="Impact"/>
+        <Label Grid.Row="4" Grid.Column="0" Content="Ground speed" FontSize="14" HorizontalAlignment="Center" FontFamily="Impact"/>
+        <Label Grid.Row="6" Grid.Column="0" Content="Air speed" FontSize="14" HorizontalAlignment="Center" FontFamily="Impact"/>
+        <Label Grid.Row="0" Grid.Column="2" Content="Gps indicated altitude" FontSize="14" HorizontalAlignment="Center" FontFamily="Impact"/>
+        <Label Grid.Row="2" Grid.Column="2" Content="internal roll" FontSize="14" HorizontalAlignment="Center" FontFamily="Impact"/>
+        <Label Grid.Row="4" Grid.Column="2" Content="Internal pitch" FontSize="14" HorizontalAlignment="Center" FontFamily="Impact"/>
+        <Label Grid.Row="6" Grid.Column="2" Content="Altimeter indicated altitude" FontSize="14" HorizontalAlignment="Center" FontFamily="Impact"/>
+        <Label x:Name="heading_deg" Grid.Row="1" Grid.Column="0"  FontSize="14" HorizontalAlignment="Center" FontFamily="Impact" Content="{Binding VM_Heading_deg}"/>
+        <Label x:Name="vertical_speed" Grid.Row="3" Grid.Column="0"  FontSize="14" HorizontalAlignment="Center" FontFamily="Impact" Content="{Binding VM_Vertical_speed}"/>
+        <Label x:Name="ground_speed" Grid.Row="5" Grid.Column="0"  FontSize="14" HorizontalAlignment="Center" FontFamily="Impact" Content="{Binding VM_Ground_speed}"/>
+        <Label x:Name="air_speed" Grid.Row="7" Grid.Column="0"  FontSize="14" HorizontalAlignment="Center" FontFamily="Impact" Content="{Binding VM_Air_speed}"/>
+        <Label x:Name="gps_indicated_speed" Grid.Row="1" Grid.Column="3"  FontSize="14" HorizontalAlignment="Center" FontFamily="Impact" Content="{Binding VM_Gps_Indicated_altitude}"/>
+        <Label x:Name="internal_roll" Grid.Row="3" Grid.Column="3"  FontSize="14" HorizontalAlignment="Center" FontFamily="Impact" Content="{Binding VM_Internal_roll}"/>
+        <Label x:Name="internal_pitch" Grid.Row="5" Grid.Column="3"  FontSize="14" HorizontalAlignment="Center" FontFamily="Impact" Content="{Binding VM_Internal_pitch}"/>
+        <Label x:Name="altimeter_indicated_altitude" Grid.Row="7" Grid.Column="3"  FontSize="14" HorizontalAlignment="Center" FontFamily="Impact" Content="{Binding VM_Altimeter_Indicated_altitude}"/>
+    </Grid>
+</UserControl>

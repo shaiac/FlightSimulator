@@ -1,0 +1,84 @@
+﻿<Window x:Class="FlightSimulatorApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FlightSimulatorApp"
+        xmlns:prog="clr-namespace:FlightSimulatorApp.View"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="600" Width="820">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="210"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="400"/>
+            <ColumnDefinition Width="190"/>
+            <ColumnDefinition Width="10"/>
+            <ColumnDefinition Width="200"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Border Grid.Column="1" Grid.Row="0" Grid.RowSpan="8">
+            <Border.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFAAFCFF" Offset="0"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </Border.Background>
+        </Border>
+        <Border Grid.Column="2" Grid.Row="0" Grid.RowSpan="8" Background="Black" />
+        <Border Grid.Column="3" Grid.ColumnSpan="2" Grid.Row="0" Grid.RowSpan="8" Margin="0,0,-22.333,0.333">
+            <Border.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFAAFCFF" Offset="0"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </Border.Background>
+        </Border>
+        <Border Grid.Row="7" Grid.RowSpan="5" Grid.Column="1" Grid.ColumnSpan="4" Margin="0.333,30.333,-22.333,0">
+            <Border.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFFF8C8C" Offset="1"/>
+                    <GradientStop Color="Red"/>
+                    <GradientStop Color="#FFFF8989" Offset="0.66"/>
+                </LinearGradientBrush>
+            </Border.Background>
+        </Border>
+        <Border Grid.Column="1" Grid.Row="12" Grid.ColumnSpan="4" Grid.RowSpan="2" Margin="0.333,0,-22.333,0">
+            <Border.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFAAFCFF" Offset="1"/>
+                    <GradientStop Color="White"/>
+                </LinearGradientBrush>
+            </Border.Background>
+        </Border>
+        <Border Grid.Row="0" Grid.RowSpan="14" Grid.Column="0">
+            <Border.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFFF8C8C" Offset="1"/>
+                    <GradientStop Color="Red"/>
+                    <GradientStop Color="#FFFF8989" Offset="0.66"/>
+                </LinearGradientBrush>
+            </Border.Background>
+        </Border>
+        <prog:DashBoard x:Name="myDash" Grid.Column="1" Grid.ColumnSpan="3" Grid.Row="0" Grid.RowSpan="8"></prog:DashBoard>
+        <prog:Controllers x:Name="myControllers" Grid.Column="1" Grid.ColumnSpan="3" Grid.Row="8" Grid.RowSpan="5"></prog:Controllers>
+        <Slider Name="knobX" Grid.Row="1" Grid.Column="0" Value="{Binding KnobPositionX}" Visibility="Hidden" ValueChanged="Slider_ValueChanged"/>
+        <Slider Name="knobY" Grid.Row="1" Grid.Column="0" Value="{Binding KnobPositionY}" Visibility="Hidden" ValueChanged="Slider_ValueChanged"/>
+        <prog:Map x:Name="myMap" Grid.Row="1" Grid.Column="0" Grid.RowSpan="13"></prog:Map>
+        <Button Grid.Row="0" Content="Logout" Grid.Column="0" HorizontalAlignment="Left"  VerticalAlignment="Top" Width="400" Height="30" Click="Button_Click" Background="#FFFFF200" FontWeight="Bold" FontSize="18"/>
+    </Grid>
+</Window>

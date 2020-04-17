@@ -1,0 +1,31 @@
+﻿<UserControl x:Class="FlightSimulatorApp.View.Controllers"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:FlightSimulatorApp.View"
+             xmlns:prog="clr-namespace:FlightSimulatorApp.View"
+             mc:Ignorable="d" 
+             d:DesignHeight="330" d:DesignWidth="400">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="210"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="400"/>
+        </Grid.ColumnDefinitions>
+        <Slider Name="aileron" Grid.Row="1" Grid.Column="0" Value="{Binding VM_Aileron}" Maximum="1" Minimum="-1" />
+        <Slider Grid.Row="3" Grid.Column="0" Value="{Binding VM_Throttle}" Maximum="1"/>
+        <Label Grid.Row="0" Grid.Column="0" Content="Aileron" FontSize="20" HorizontalAlignment="Center" FontFamily="Impact"/>
+        <Label Grid.Row="2" Grid.Column="0" Content="Throttle" FontSize="20" HorizontalAlignment="Center" FontFamily="Impact"/>
+        <Viewbox  Grid.Row="4" Grid.Column="0" Margin="0,0,0,8">
+            <prog:JoyStick x:Name="myJoystick">
+            </prog:JoyStick>
+        </Viewbox>
+    </Grid>
+</UserControl>
