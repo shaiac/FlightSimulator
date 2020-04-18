@@ -74,12 +74,14 @@ namespace FlightSimulatorApp.View
             }
         }
 
+        //Doing the animation of the knob moving. 
         private void Knob_MouseMove(object sender, MouseEventArgs e)
         {
             if (e.LeftButton == MouseButtonState.Pressed)
             {
                 double x = e.GetPosition(this).X - mouseDownPoint.X;
                 double y = e.GetPosition(this).Y - mouseDownPoint.Y;
+                //Checking that we are not moving the knob out of the base borders.
                 if (Math.Sqrt(x * x + y * y) < Base.Width / 6)
                 {
                     Mouse.Capture(this.KnobBase);
@@ -101,7 +103,7 @@ namespace FlightSimulatorApp.View
                 }
             }
         }
-
+        //Starting the animation of the joystick to bring the knob to the center after releasing it. 
         private void Knob_MouseUp(object sender, MouseButtonEventArgs e)
         {
             story.Begin(Knob, true);

@@ -19,6 +19,9 @@ namespace FlightSimulatorApp
     /// <summary>
     /// Interaction logic for WindowsController.xaml
     /// </summary>
+    /**
+     Managing all the Windows in the App, the tranfer from one windw to another
+     */
     public partial class WindowsController : Window, INotifyPropertyChanged
     {
         App app;
@@ -38,7 +41,10 @@ namespace FlightSimulatorApp
                 this.PropertyChanged(this, new PropertyChangedEventArgs(propName));
             }
         }
-
+        /**
+         When the button is checked (true) we need to move from the login window to
+         the main window of the app (only if successfully connected).
+        */
         private void RadioButton_Checked(object sender, RoutedEventArgs e)
         {
             try
