@@ -11,11 +11,14 @@ namespace FlightSimulatorApp
         private IFlightGearModel model;
         double rudder;
         double elevator;
+        //Constructor, setting the app model
         public ControllersViewModel(IFlightGearModel model)
         {
             this.model = model;
         }
-
+        /**
+         Property of the throttle
+         */
         public double VM_Throttle
         {
             get { return model.Throttle; }
