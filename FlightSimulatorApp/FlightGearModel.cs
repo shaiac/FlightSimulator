@@ -42,8 +42,11 @@ namespace FlightSimulatorApp
             get { return throttle; }
             set
             {
-                throttle = value;
-                throttleIsChanged = true;
+                if (throttle != value)
+                {
+                    throttle = value;
+                    throttleIsChanged = true;
+                }
             }
         }
         public double Aileron
@@ -51,8 +54,11 @@ namespace FlightSimulatorApp
             get { return aileron; }
             set
             {
-                aileron = value;
-                aileronIsChanged = true;
+                if (aileron != value)
+                {
+                    aileron = value;
+                    aileronIsChanged = true;
+                }
             }
         }
         public double Heading_deg
