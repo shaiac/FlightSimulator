@@ -184,12 +184,18 @@ namespace FlightSimulatorApp
             }
         }
 
+        //Connecting to the server
         public void connect(string ip, int port)
         {
             this.client.connect(ip, port);
             this.start();
 
         }
+        /**
+         Running a loop to get or set properties values from the server.
+         each time we are writing a request and reading the answer of the server, checking the answer that
+         we got if in range, not error..
+         */
         public void start()
         {
             string buffer;
@@ -197,6 +203,7 @@ namespace FlightSimulatorApp
             new Thread(delegate () {
                 while (!stop)
                 {
+                    //Try and catch if we got exception while reading/writing we dont want the app to stuck. 
                     try
                     {
                         client.write("get /instrumentation/heading-indicator/indicated-heading-deg\n");
@@ -284,6 +291,7 @@ namespace FlightSimulatorApp
                         if (!buffer.Contains("ERR"))
                         {
                             tempDouble = Double.Parse(buffer);
+                            //Checking if the latitude is in the earth range.
                             if (tempDouble >= -90 && tempDouble <= 90)
                             {
                                 Latitude = tempDouble;
@@ -301,6 +309,7 @@ namespace FlightSimulatorApp
                         if (!buffer.Contains("ERR"))
                         {
                             tempDouble = Double.Parse(buffer);
+                            //Checking if the longitude is in the earth range.
                             if (tempDouble >= -180 && tempDouble <= 180)
                             {
                                 Longitude = tempDouble;
@@ -314,6 +323,7 @@ namespace FlightSimulatorApp
                         else
                             ExceptionType = "Error Reading the Longitude position";
 
+                        //All the Setting commands.
                         if (aileronIsChanged)
                         {
                             client.write("set /controls/flight/aileron " + aileron + "\n");
@@ -344,7 +354,10 @@ namespace FlightSimulatorApp
                 }
             }).Start();
         }
-
+        /**
+          Method that checks by the property name if the value that we got is in the range if not 
+          returning the closest value that in range
+         */
         public double checkIfInRange(string propName, double value)
         {
             if (propName == "Heading_deg")
@@ -405,12 +418,14 @@ namespace FlightSimulatorApp
             }
             return value;
         }
+        //when activated, the next round of the loop in the start method the rudder and elevator will set 
         public void movePlane(double elevator, double rudder)
         {
             planeMove = true;
             this.elevator = elevator;
             this.rudder = rudder;
         }
+        //Disconnecting from the server.
         public void disconnect()
         {
             this.stop = true;

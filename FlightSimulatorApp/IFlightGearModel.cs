@@ -3,6 +3,7 @@ using System.ComponentModel;
 
 namespace FlightSimulatorApp
 {
+    //Iterface for the Model.
     public interface IFlightGearModel : INotifyPropertyChanged
     {
         void connect(string ip, int port);

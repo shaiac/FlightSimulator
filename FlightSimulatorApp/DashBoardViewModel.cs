@@ -3,6 +3,10 @@ using System.ComponentModel;
 
 namespace FlightSimulatorApp
 {
+    /**
+        The view model of the dashboard of the plane, there are 8 indicators
+        We will bind all those properties to the match lable in the view.
+     */
     public class DashBoardViewModel : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;

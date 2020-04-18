@@ -41,6 +41,7 @@ namespace FlightSimulatorApp
                 this.PropertyChanged(this, new PropertyChangedEventArgs(propName));
             }
         }
+        //Connecting to the server, TCP connection setting the read time out to 10 sec.
         public void connect(string ip, int port)
         {
             client = new TcpClient();
@@ -59,6 +60,7 @@ namespace FlightSimulatorApp
             is_con = true;
         }
 
+        //Writing to the server.
         public void write(string command)
         {
             if (is_con)
@@ -75,7 +77,7 @@ namespace FlightSimulatorApp
                 }
             }
         }
-
+        //Reading from the server.
         public string read()
         {
             if (is_con)
@@ -96,7 +98,7 @@ namespace FlightSimulatorApp
             }
             return "";
         }
-
+        //Closing the connection
         public void disconnect()
         {
             client.Close();

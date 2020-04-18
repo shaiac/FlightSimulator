@@ -8,6 +8,10 @@ using System.Threading.Tasks;
 
 namespace FlightSimulatorApp
 {
+    /**
+        The view model of the Map, There are two properties that sets the  
+        map location Latitude and Longitude. 
+     */
     public class MapViewModel : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;

@@ -48,7 +48,10 @@ namespace FlightSimulatorApp
                 NotifyPropertyChanged("ButtonClicked");
             }
         }
-
+        /**
+         The login button event, after clicking the button checking that the port and ip are 
+         in the correct format and that connected successfully. 
+        */
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             int portAsString;

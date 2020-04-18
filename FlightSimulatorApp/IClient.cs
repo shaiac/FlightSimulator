@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace FlightSimulatorApp
 {
+    //Interface for the Client
     public interface IClient
     {
         void connect(string ip, int port);

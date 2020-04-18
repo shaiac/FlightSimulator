@@ -6,6 +6,11 @@ using System.Threading.Tasks;
 
 namespace FlightSimulatorApp
 {
+    /**
+        The view model of all the Controllers of the App, 2 sliders for the Throttle and Aileron
+        and for the Joystick values rudder and elevator. We will bind all those properties to the
+        match Controller in the view.
+     */
     public class ControllersViewModel
     {
         private IFlightGearModel model;
@@ -16,9 +21,7 @@ namespace FlightSimulatorApp
         {
             this.model = model;
         }
-        /**
-         Property of the throttle
-         */
+        
         public double VM_Throttle
         {
             get { return model.Throttle; }
